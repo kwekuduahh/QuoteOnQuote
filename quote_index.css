@@ -80,3 +80,30 @@ body {
     background-color: rgba(255, 255, 255, 0.4);
     box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
+
+.quote-text {
+    font-size: 2rem;
+}
+
+.long-quote {
+    font-size: 1.5rem;
+}
+
+.fa-quote-left {
+    font-size: 3.75rem;
+}
+
+.quote-author {
+    font-size: 1.75rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+@media screen and (max-width:1000px) {
+    .quote-container {
+        margin: auto 5px;
+    }
+    .quote-text {
+        font-size: 2rem;
+    }
+}
