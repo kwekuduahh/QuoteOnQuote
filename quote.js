@@ -6,11 +6,11 @@ const quoteBtn = document.getElementById("new-quote");
 const loader = document.getElementById("loader");
 
 // This function displays the loader under a condition.
-function loading() {
+function showLoadingSpinner() {
   loader.hidden = false;
   quoteContainer.hidden = true;
 }
-function complete() {
+function removeLoadingSpinner() {
   if (!loader.hidden) {
     loader.hidden = true;
     quoteContainer.hidden = false;
@@ -20,7 +20,7 @@ function complete() {
 // Get quote from API
 async function getQuote() {
   // initiates Loading as API request is done
-  loading();
+  showLoadingSpinner();
 
   const proxyUrl = "https://cors.eu.org/"
   const apiUrl = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json";
@@ -47,7 +47,7 @@ async function getQuote() {
     getQuote();
     console.log("Whoops! Something went wrong", error);
   }
-  complete();
+  removeLoadingSpinner();
 }
 
 
